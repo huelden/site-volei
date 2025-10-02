@@ -82,3 +82,32 @@ img {
     max-width: 100%;
     height: auto;
 }
+#fireball{
+    width: 100px;
+    height: auto;
+    display: block;
+    transform-origin: center;
+    animation: float 3.6s ease-in-out infinite, flicker 0.15s steps(2, end) infinite, slow-rotate 12s linear infinite;
+    will-change: transform, opacity, filter;
+
+}
+
+@keyframes float{
+    0% { transform: translatey(0) scale(1); }
+     25% { transform: translatey(-6px) scale(1.02); }
+      50% { transform: translatey(0) scale(1); }
+       75% { transform: translatey(6px) scale(0.99); }
+        100% { transform: translatey(0) scale(1); }
+}
+
+@keyframes flicker {
+    0% {filter: drop-shadow(0 0 0 rgba(255,140,0,0,0)); opacity: 1;
+    50% { filter: ;: drop-shadow(0 4px 10px rgba(255,140,0,0.35)); opacity: 0.95; transform:translatey(-1px);}
+    100%{ filter: drop-shadow(0 0 0px rgba(255,140,0,0,0)); opacity:1;}
+
+}
+@keyframes slow-rotate {
+    0% { transform: rotate(0deg);}
+    50% { transform: rotate(4deg);}
+    100% { transform: rotate(0deg);}
+}
